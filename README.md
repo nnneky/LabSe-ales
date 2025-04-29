@@ -44,6 +44,19 @@ La transformada wavelet (WT) descompone una señal en versiones escaladas y desp
 
 - Compresión de datos sin perder información relevante.
 
+### Tipos de wavelets comunes
+
+Daubechies: Buena para compactación y ortogonalidad.
+
+Symlets: Más simétricas, útiles en análisis de señales biológicas.
+
+Coiflets: Con más momentos nulos, útiles en EEG y EMG.
+
+Haar: Simple y rápida, usada para segmentación o compresión.
+
+Morlet: Usada en CWT para análisis tiempo-frecuencia.
+
+Mexican Hat (Ricker): Adecuada para detectar eventos rápidos.
 
 ## Explicación Código: 
 Librerías utilizadas: 
