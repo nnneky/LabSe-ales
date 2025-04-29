@@ -44,7 +44,7 @@ La transformada wavelet (WT) descompone una señal en versiones escaladas y desp
 
 - Compresión de datos sin perder información relevante.
 
-### Wavelets usadas en ECG
+### Wavelets más usadas en ECG
 
 - #### Daubechies (db4, db6)
 son herramientas eficientes para analizar señales biológicas, como el ECG. La db4 tiene 4 coeficientes y es ideal para detección de picos R y análisis de variabilidad de la frecuencia cardíaca (HRV), gracias a su alta resolución temporal. Por otro lado, la db6 con 6 coeficientes ofrece mejor resolución en frecuencia, siendo útil para un análisis más detallado de las frecuencias, aunque con una resolución temporal ligeramente menor. Ambas se utilizan en el procesamiento de señales ruidosas y en la mejora de la precisión del análisis de ECG.
