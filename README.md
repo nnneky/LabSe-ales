@@ -161,7 +161,7 @@ end
 ```
 Luego de ejecutar lo anterior, se obtuvo la siguiente señal
 
-![image](https://github.com/user-attachments/assets/7faa5a1c-7e1b-4e41-900d-fa7d15b19115)
+![image](https://github.com/user-attachments/assets/5ece8f89-0b0b-4304-a7d2-c6943f7a3211)
 
 ## PRE-PROCESAMIENTO DE LA SEÑAL ECG
 Despues de obtener la señal ecg bajo las condiciones optimas, se realizó una preparación de la señal, antes de implementar la transformada wavelt, este proceso previo incluyó:
