@@ -161,8 +161,7 @@ end
 
 
 ```
-
-
+## Pre-procesamiento de la señal ECG
 
 
 
