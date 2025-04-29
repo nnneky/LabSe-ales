@@ -60,6 +60,13 @@ Para este apartado de la práctica se utilizo un módulo de ecg AD8232, se utili
 
 ![image](https://github.com/user-attachments/assets/ea68d9d7-7353-4c24-bf64-0aeb80847941)
 
+Despues de colocar de forma correcta los electrodos, la salida de datos del sensor se conecto a la stm32 nucleo 411, estos datos serán recividos mediante un ADC y enviados a matlab mediante un protocolo usart, estos datos serán recibidos por una interfaz en matlab que realizará el guardado y tratamiento de la señal en un archivo .txt, Como se muestra a continuación
+
+```bash
+
+```
+
+
 
 
 
