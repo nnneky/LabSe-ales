@@ -13,6 +13,11 @@ En esta práctica se analizó la variabilidad de la frecuencia cardíaca (HRV) a
 
 -pywt
 
+## FUNDAMENTOS TEÓRICOS:
+
+### Actividad simpática y parasimpática del sistema nervioso autónomo
+Regula de forma complementaria diversas funciones fisiológicas, incluida la frecuencia cardíaca. La actividad simpática tiende a aumentar la frecuencia cardíaca al preparar al cuerpo para situaciones de alerta, mientras que la actividad parasimpática la disminuye, promoviendo el descanso y la recuperación.
+
 ## Explicación Código: 
 Librerías utilizadas: 
 ```bash 
