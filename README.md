@@ -9,7 +9,7 @@ En esta práctica se analizó la variabilidad de la frecuencia cardíaca (HRV) a
 
 -matplotlib.pyplot
 
--scip-y.signal  butter, filtfilt, find_peaks
+-scipy.signal 
 
 -pywt
 
