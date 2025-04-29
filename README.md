@@ -55,6 +55,9 @@ on variantes de las wavelets de Daubechies diseñadas para ofrecer mayor simetr�
 ## DISEÑO DEL EXPERIMENTO A IMPLEMENTAR
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
 
+## ADQUSICIÓN DE LA SEÑAL ECG
+
+
 ## Explicación Código: 
 Librerías utilizadas: 
 ```bash 
