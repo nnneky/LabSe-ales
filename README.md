@@ -162,8 +162,31 @@ end
 
 ```
 ## PRE-PROCESAMIENTO DE LA SEÑAL ECG
+Despues de obtener la señal ecg bajo las condiciones optimas, se realizó una preparación de la señal, antes de implementar la transformada wavelt, este proceso previo incluyó:
+
+#### Importación de la señal y librerias a implementar
+
+```bash
+import numpy as np ## Cálculos numéricos eficientes en arreglos y matrices.
+import matplotlib.pyplot as plt ## Permite graficar señales, espectros, resultados del procesamiento
+from scipy.signal import butter, lfilter, find_peaks ## Procesamiento de señales.
+import pywt ## Transformada Wavelet Discreta (DWT).
+from scipy.interpolate import interp1d
+
+# --------------------------------------
+# 1. Cargar señal ECG
+# --------------------------------------
+fs = 400  # frecuencia de muestreo en Hz
+ecg_signal = np.loadtxt('ecg01.txt') ## importar señal ecg del archivo .txt
+t = np.arange(len(ecg_signal)) / fs ##  Crea el vector de tiempo (t) correspondiente a cada muestra del ECG
 
 
+```
+
+#### filtro IIR de acuerdo con los parámetros de la señal
+```bash
+
+```
 
 
 ## Explicación Código: 
