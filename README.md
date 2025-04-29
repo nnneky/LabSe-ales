@@ -4,9 +4,13 @@ En esta práctica se analizó la variabilidad de la frecuencia cardíaca (HRV) a
 ## Requerimientos:
 
 -Interfaz de python (para este caso 3.12)
+
 -Numpy
+
 -matplotlib.pyplot
+
 -scip-y.signal  butter, filtfilt, find_peaks
+
 -pywt
 
 ## Explicación Código: 
