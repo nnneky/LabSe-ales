@@ -29,7 +29,20 @@ En el análisis espectral de la HRV, las fluctuaciones se descomponen en diferen
 
 - HF (High Frequency): 0.15 – 0.4 Hz (Se relaciona principalmente con la actividad parasimpática (vagal), especialmente con la respiración (arritmia sinusal respiratoria))
 
+### Transformada Wavelet
+La transformada wavelet (WT) descompone una señal en versiones escaladas y desplazadas de una función base llamada wavelet madre. Esta función tiene características localizadas tanto en el tiempo como en la frecuencia, lo que permite el análisis multi-resolución.
 
+### Usos principales en señales biológicas
+
+- Detección de eventos transitorios (ej. complejos QRS en ECG).
+
+- Descomposición multi-resolución para analizar componentes de alta y baja frecuencia.
+
+- Eliminación de ruido y artefactos.
+
+- Análisis espectro-temporal.
+
+- Compresión de datos sin perder información relevante.
 
 
 ## Explicación Código: 
