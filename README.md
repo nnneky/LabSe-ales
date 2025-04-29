@@ -44,19 +44,13 @@ La transformada wavelet (WT) descompone una señal en versiones escaladas y desp
 
 - Compresión de datos sin perder información relevante.
 
-### Tipos de wavelets comunes
+### Wavelets usadas en ECG
 
-Daubechies: Buena para compactación y ortogonalidad.
+- #### Daubechies (db4, db6)
+son herramientas eficientes para analizar señales biológicas, como el ECG. La db4 tiene 4 coeficientes y es ideal para detección de picos R y análisis de variabilidad de la frecuencia cardíaca (HRV), gracias a su alta resolución temporal. Por otro lado, la db6 con 6 coeficientes ofrece mejor resolución en frecuencia, siendo útil para un análisis más detallado de las frecuencias, aunque con una resolución temporal ligeramente menor. Ambas se utilizan en el procesamiento de señales ruidosas y en la mejora de la precisión del análisis de ECG.
 
-Symlets: Más simétricas, útiles en análisis de señales biológicas.
-
-Coiflets: Con más momentos nulos, útiles en EEG y EMG.
-
-Haar: Simple y rápida, usada para segmentación o compresión.
-
-Morlet: Usada en CWT para análisis tiempo-frecuencia.
-
-Mexican Hat (Ricker): Adecuada para detectar eventos rápidos.
+- #### Symlet (Sym2, Sym4)
+on variantes de las wavelets de Daubechies diseñadas para ofrecer mayor simetría en su forma, lo que mejora la reconstrucción de señales. La Sym2 tiene 2 coeficientes y es útil para análisis de alta resolución temporal, mientras que la Sym4 con 4 coeficientes ofrece un mejor balance entre resolución temporal y frecuencia. Son ideales para filtrar artefactos y mejorar el análisis de señales biológicas como el ECG y EEG, manteniendo detalles importantes mientras eliminan ruido.
 
 ## DISEÑO DEL EXPERIMENTO A IMPLEMENTAR
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
