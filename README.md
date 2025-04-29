@@ -56,6 +56,12 @@ on variantes de las wavelets de Daubechies diseñadas para ofrecer mayor simetr�
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
 
 ## ADQUSICIÓN DE LA SEÑAL ECG
+Para este apartado de la práctica se utilizo un módulo de ecg AD8232, se utilizo la siguiente dispocisión de los electrodos, esta ubicación proporciona la derivación II de la señal electrocradiográfica.
+
+![image](https://github.com/user-attachments/assets/ea68d9d7-7353-4c24-bf64-0aeb80847941)
+
+
+
 
 
 ## Explicación Código: 
