@@ -34,8 +34,35 @@ def butter_bandpass(lowcut, highcut, fs, order=4): #  diseña un filtro Butterwo
     high = highcut / nyq # Se normalizan las frecuencias 
     b, a = butter(order, [low, high], btype='band')   # Se  calcula los coeficientes del filtro
     return b, a
+def apply_filter(data, lowcut, highcut, fs, order=4): # Llama a butter_bandpass para crear el filtro.
+    b, a = butter_bandpass(lowcut, highcut, fs, order=order)
+    y = filtfilt(b, a, data)  # aplica el filtro de forma acausal (sin desfase) # Aplica el filtro usando filtfilt que filtra hacia adelante y hacia atrás para poder eliminar el desfase
+    return y
+filtered_ecg = apply_filter(ecg_signal, 0.5, 40.0, fs) # Se filtra la señal para dejar solo frecuencias entre 0.5 Hz y 40 Hz, que son las relevantes en ECG.
 ```
-
+Se grafica la señal filtrada: 
 ```bash 
+plt.figure(figsize=(15, 4))
+plt.plot(t, filtered_ecg)
+plt.title('Señal ECG filtrada')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud')
+plt.grid()
+plt.show()
+```
+Detección de picos R:
 
+```bash
+peaks, properties = find_peaks(filtered_ecg, distance=0.6*fs, height=np.std(filtered_ecg)) #los picos deben estar separados al menos 0.6 segundos donde find_peaks detecta picos locales en la señal y height=np.std(filtered_ecg) hacen que detecte solo picos con una altura mayor al valor típico
+rpeak_times = peaks / fs #tiempo de cada pico en segundos. 
+rr_intervals = np.diff(rpeak_times) * 1000  # en milisegundos
+# Se grafica la señal filtrada con los picos R marcados como puntos rojos ('rx')
+plt.figure(figsize=(15, 4))
+plt.plot(t, filtered_ecg)
+plt.plot(peaks/fs, filtered_ecg[peaks], "rx")
+plt.title('Detección de Picos R')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud')
+plt.grid()
+plt.show()    
 ```
