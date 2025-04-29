@@ -63,6 +63,102 @@ Para este apartado de la práctica se utilizo un módulo de ecg AD8232, se imple
 Despues de colocar de forma correcta los electrodos, la salida de datos del sensor se conecto a la stm32 nucleo 411, estos datos serán recividos mediante un ADC y enviados a matlab mediante un protocolo usart, luego en la interfaz del programa se realizará el guardado y tratamiento de la señal en un archivo .txt, Como se muestra a continuación
 
 ```bash
+function registrar_ecg_5min_completo
+    % ECG 5 minutos con visualización en vivo y guardado a archivo
+
+    % Limpia la consola, las variables del workspace y cierra figuras
+    clc; clear; close all;
+
+    %% Configuración del puerto serie
+    puerto  = 'COM3';         % Nombre del puerto COM utilizado
+    baudios = 115200;         % Velocidad de transmisión (baudios)
+
+    try
+        % Crea un objeto de puerto serie con los parámetros dados
+        sp = serialport(puerto, baudios);
+        % Configura el terminador de línea como salto de línea (LF, hace que pase a la siguiente linea luego de imprimir texto)
+        configureTerminator(sp, "LF");
+        % Tiempo máximo de espera para una lectura
+        sp.Timeout = 1;
+        % Limpia cualquier dato residual en el buffer del puerto serie
+        flush(sp);
+    catch
+        % Si no se puede abrir el puerto, muestra error
+        error('No se pudo abrir el puerto %s. Verifique conexión.', puerto);
+    end
+
+    %% Archivo de registro
+    nombreArchivo = 'ECG_1.txt'; % Nombre del archivo donde se guarda la señal
+    fid = fopen(nombreArchivo, 'w'); % Abre archivo para escritura
+    if fid == -1
+        % Si no se puede abrir el archivo, cierra puerto y muestra error
+        clear sp;
+        error('No se pudo crear el archivo %s.', nombreArchivo);
+    end
+
+    %% Parámetros de adquisición
+    T_total      = 300;    % Tiempo total de adquisición (en segundos)
+    plotInterval = 0.1;    % Intervalo de actualización del gráfico (s)
+    ventanaMM    = 5;      % Tamaño de ventana para media móvil (suavizado)
+    bufSize      = 500;    % Cantidad de muestras a mostrar en el gráfico
+
+    % Inicialización de buffers para la señal cruda y filtrada
+    datos   = zeros(1, bufSize, 'uint8');   % Buffer crudo (sin filtrar)
+    datosF  = zeros(1, bufSize);            % Buffer filtrado (media móvil)
+
+    % Inicializa temporizadores para controlar duración total y gráficos
+    tStart  = tic;           % Tiempo de inicio de adquisición
+    lastPlot = tic;          % Tiempo del último gráfico actualizado
+
+    %% Preparar figura
+    % Crea una figura nueva con título personalizado
+    hFig  = figure('Name','ECG 5 min','NumberTitle','off');
+    % Traza la señal cruda en azul
+    hRaw  = plot(datos, 'b', 'LineWidth', 1); hold on;
+    % Traza la señal filtrada en rojo
+    hFilt = plot(datosF,'r', 'LineWidth', 1);
+    % Escala del eje Y (valores entre 0 y 255 para uint8)
+    ylim([0, 255]); grid on;
+    % Etiquetas de los ejes
+    xlabel('Muestras'); ylabel('Valor (uint8)');
+    % Título con el tiempo transcurrido
+    hTitle = title('0 / 300 s','FontSize',12);
+
+    %% Bucle principal de captura
+    while toc(tStart) < T_total
+        % Si hay datos disponibles en el puerto serie
+        if sp.NumBytesAvailable > 0
+            % Leer todos los datos disponibles como uint8
+            muestras = read(sp, sp.NumBytesAvailable, 'uint8');
+            % Guardar cada muestra en el archivo de texto
+            fprintf(fid, '%u\n', muestras);
+
+            % Actualizar buffer de señal cruda desplazando y agregando nuevas muestras
+            datos = [datos(length(muestras)+1:end), muestras];
+            % Aplicar media móvil para suavizar la señal
+            datosF = movmean(datos, ventanaMM);
+        end
+
+        % Actualizar gráfica si ha pasado suficiente tiempo
+        if toc(lastPlot) > plotInterval
+            % Actualiza los datos del gráfico
+            set(hRaw,  'YData', datos);
+            set(hFilt, 'YData', datosF);
+            % Actualiza el título con el tiempo transcurrido
+            set(hTitle,'String', sprintf('%.1f / 300 s', toc(tStart)));
+            % Redibuja figura de forma eficiente
+            drawnow limitrate;
+            % Reinicia temporizador para el siguiente gráfico
+            lastPlot = tic;
+        end
+    end
+
+    %% Finalización
+    fclose(fid);     % Cierra el archivo de texto
+    clear sp;        % Libera el puerto serie
+    fprintf('→ Captura finalizada. Datos guardados en %s\n', nombreArchivo); % Mensaje final
+end
+
 
 ```
 
