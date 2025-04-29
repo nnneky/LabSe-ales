@@ -18,6 +18,20 @@ En esta práctica se analizó la variabilidad de la frecuencia cardíaca (HRV) a
 ### Actividad simpática y parasimpática del sistema nervioso autónomo
 Regula de forma complementaria diversas funciones fisiológicas, incluida la frecuencia cardíaca. La actividad simpática tiende a aumentar la frecuencia cardíaca al preparar al cuerpo para situaciones de alerta, mientras que la actividad parasimpática la disminuye, promoviendo el descanso y la recuperación.
 
+### Variabilidad de la frecuencia cardiaca (HRV) 
+La variabilidad de la frecuencia cardíaca (HRV) se refiere a las fluctuaciones en el intervalo R-R (es decir, el tiempo entre dos picos sucesivos R en el ECG), lo que refleja el control autonómico del corazón. Esta variabilidad es un indicador sensible del equilibrio entre la actividad simpática y parasimpática del sistema nervioso autónomo.
+
+En el análisis espectral de la HRV, las fluctuaciones se descomponen en diferentes bandas de frecuencia, cada una asociada a distintos mecanismos fisiológicos. Las frecuencias de interés más comunes en este análisis son:
+
+- VLF (Very Low Frequency): 0.003 – 0.04 Hz.
+
+- LF (Low Frequency): 0.04 – 0.15 Hz (Se asocia con una combinación de actividad simpática y parasimpática)
+
+- HF (High Frequency): 0.15 – 0.4 Hz (Se relaciona principalmente con la actividad parasimpática (vagal), especialmente con la respiración (arritmia sinusal respiratoria))
+
+
+
+
 ## Explicación Código: 
 Librerías utilizadas: 
 ```bash 
