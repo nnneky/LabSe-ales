@@ -158,9 +158,11 @@ function registrar_ecg_5min_completo
     clear sp;        % Libera el puerto serie
     fprintf('→ Captura finalizada. Datos guardados en %s\n', nombreArchivo); % Mensaje final
 end
-
-
 ```
+Luego de ejecutar lo anterior, se obtuvo la siguiente señal
+
+![image](https://github.com/user-attachments/assets/7faa5a1c-7e1b-4e41-900d-fa7d15b19115)
+
 ## PRE-PROCESAMIENTO DE LA SEÑAL ECG
 Despues de obtener la señal ecg bajo las condiciones optimas, se realizó una preparación de la señal, antes de implementar la transformada wavelt, este proceso previo incluyó:
 
