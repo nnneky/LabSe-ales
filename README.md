@@ -299,13 +299,15 @@ plt.ylabel('Frecuencia (Hz)')
 plt.colorbar(label='Potencia') # añade uina barra que indica cuantra ´potencia hay rn cada espacio del espectrograma
 
 ```
+#### Analísis transformada Wavelet
 
-Las señales biologicas que se debían simular estan interpretadas de manera completa por la función "mor1"
-Aplicando lo anterior se obtuvo:
+Se usó la transformada wavelet Morlet por que al ser una función oscilatoria que se utiliza mucho en señales biologicas debido a su facilidad para tener buena localización en tiempo y frecuencia, por lo que se uso una transformada wavelet continua ya que esta captura variaciones muy siaves ademas de que teiene una gran adaptación a las bandas fisiologicas especificas de HRV donde a partir del espectrograma se pueden estudiar las variaciones simpaticas y parasimpaaticas. 
+
+Donde al inicio en los primeros 100 ms se ve presencia de potencia en la banda LF lo cual indica un estado basal estable de modo que tiene un tono 
 
 ![image](https://github.com/user-attachments/assets/3e2de52f-9069-4fcb-b0e3-c098b3676c5e)
 
-El análisis de tiempo continuo muestra una media del intervalo RR de 806.71 ms, lo que equivale a una frecuencia cardíaca promedio de aproximadamente 74 latidos por minuto (usando la formula 60000/RR promedio), dentro del rango normal en reposo. La desviación estándar de los intervalos RR es de 122.16 ms, lo cual indica una variabilidad de la frecuencia cardíaca (HRV) alta, generalmente asociada con un buen estado de salud cardiovascular y un equilibrio adecuado del sistema nervioso autónomo, especialmente con predominio parasimpático. Esta alta variabilidad suele observarse en personas con buena condición física y bajo nivel de estrés. Esto indicaría que en la mayor parte del experimento el sujeto se mantuvo tranquilo y que en espacios muy cortos de tipo o finalizando dicho proceso experimento estimulo simpático brevemente.
+El análisis de tiempo continuo muestra una media del intervalo RR de 806.71 ms, lo que equivale a una frecuencia cardíaca promedio de aproximadamente 74 latidos por minuto (usando la formula 60000/RR promedio), dentro del rango normal en reposo. La desviación estándar de los intervalos RR es de 122.16 ms, lo cual indica una variabilidad de la frecuencia cardíaca (HRV) alta, generalmente asociada con un buen estado de salud cardiovascular y un equilibrio adecuado del sistema nervioso autónomo, especialmente con predominio parasimpático. Esta alta variabilidad suele observarse en personas con buena condición física y bajo nivel de estrés. Esto indicaría que en la mayor parte del experimento el sujeto se mantuvo tranquileo y que en espacios muy cortos de tipo o finalizando dicho proceso experimento estimulo simpático brevemente.
 
 
 ![image](https://github.com/user-attachments/assets/68028753-8d53-4496-ad61-80534ef866d6)
