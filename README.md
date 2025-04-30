@@ -240,13 +240,17 @@ rr_intervals = np.diff(rpeak_times) * 1000  # ms , La función np.diff() calcula
 # Graficar picos R
 plt.figure(figsize=(15, 4))
 plt.plot(t, filtered_ecg)
-plt.plot(peaks / fs, filtered_ecg[peaks], "rx")
+plt.plot(peaks / fs, filtered_ecg[peaks], "rx") ## pone una x en cada pico
 plt.title('Detección de Picos R')
 plt.xlabel('Tiempo (s)')
 plt.ylabel('Amplitud (mV)')
 plt.grid()
 plt.show()
 ```
+De lo anterior se obtuvo la siguiente gráfica,donde Se puede observara que los picos R se demarcaron con una x
+
+![image](https://github.com/user-attachments/assets/c179e8a7-a821-4708-9f88-b9992433f2ca)
+
 
 
 
