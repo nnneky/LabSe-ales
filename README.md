@@ -205,6 +205,9 @@ plt.ylabel('Amplitud (mV)')
 plt.grid()
 plt.show()
 ```
+El filtro pasa banda de 0.1 Hz a 50 Hz con orden 4 es adecuado para procesar señales ECG porque elimina eficazmente la deriva de línea base (<0.5 Hz) y el ruido de alta frecuencia (>50 Hz), incluyendo interferencia de red y artefactos musculares, mientras conserva las componentes fisiológicas clave como las ondas P, QRS y T. El diseño IIR de orden moderado (4) ofrece una buena atenuación con baja exigencia computacional.Luego de aplicar el filtro a la señal se obtuvo lo siguiente
+
+![image](https://github.com/user-attachments/assets/eda80515-0d4a-4c16-95e5-d0218343f7b3)
 
 
 ## Explicación Código: 
