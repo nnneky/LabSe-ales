@@ -191,7 +191,19 @@ t = np.arange(len(ecg_signal)) / fs ##  Crea el vector de tiempo (t) correspondi
 
 #### filtro IIR de acuerdo con los parámetros de la señal
 ```bash
+b, a = bandpass(0.1, 50, fs, order=4) ## define un filtro pasa bandas con frecuencias pasantes desde 0.5 a 50 Hz, de orden 4 en donde b son los coeficientes del denominador y a del denominador 
 
+# Aplicar filtro IIR usando lfilter (automáticamente con condiciones iniciales en 0)
+filtered_ecg = lfilter(b, a, ecg_signal)
+
+# Graficar ECG filtrado
+plt.figure(figsize=(15, 4))
+plt.plot(t, filtered_ecg)
+plt.title('Señal ECG filtrada con filtro IIR')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud (mV)')
+plt.grid()
+plt.show()
 ```
 
 
