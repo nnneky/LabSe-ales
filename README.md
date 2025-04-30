@@ -56,7 +56,7 @@ on variantes de las wavelets de Daubechies diseñadas para ofrecer mayor simetr�
 La transformada wavelet Morlet es ideal para el análisis de señales ECG y la medición de la HRV porque permite una resolución tanto en el tiempo como en la frecuencia, adaptándose a las características dinámicas de las señales. Esto facilita la detección precisa de eventos cardíacos y la identificación de las fluctuaciones de la frecuencia cardíaca en diferentes bandas, esenciales para evaluar la variabilidad cardíaca y el equilibrio del sistema nervioso autónomo.
 
 
-## Diagrama de flujo:
+## Diagrama de flujo de la práctica:
 
 ![image](https://github.com/user-attachments/assets/115eaf7f-121e-48ed-b0dc-a8bd4a5a56d1)
 
