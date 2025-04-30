@@ -55,6 +55,9 @@ on variantes de las wavelets de Daubechies diseñadas para ofrecer mayor simetr�
 - #### Morlet
 La transformada wavelet Morlet es ideal para el análisis de señales ECG y la medición de la HRV porque permite una resolución tanto en el tiempo como en la frecuencia, adaptándose a las características dinámicas de las señales. Esto facilita la detección precisa de eventos cardíacos y la identificación de las fluctuaciones de la frecuencia cardíaca en diferentes bandas, esenciales para evaluar la variabilidad cardíaca y el equilibrio del sistema nervioso autónomo.
 
+
+## Diagrama de flujo:
+
 ## DISEÑO DEL EXPERIMENTO A IMPLEMENTAR
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
 
@@ -271,6 +274,30 @@ plt.grid()  # Añade una cuadrícula a la gráfica para facilitar la lectura de 
 plt.show()  # Muestra la figura de la gráfica generada en pantalla
 
 ```
+
+ #### Aplicación de transformada Wavelet
+
+```bash
+wavelet = 'morl'
+scales = np.arange(1, 128)
+coefficients, frequencies = pywt.cwt(rr_interpolated, scales, wavelet, 1/interp_fs)
+
+# Limitar a frecuencias fisiológicas relevantes (0-0.5 Hz)
+freq_limit = 0.5
+mask = frequencies <= freq_limit
+coefficients = coefficients[mask]
+frequencies = frequencies[mask]
+
+plt.figure(figsize=(12, 6))
+plt.imshow(np.abs(coefficients), extent=[0, len(rr_interpolated)/interp_fs, frequencies[-1], frequencies[0]],
+           cmap='jet', aspect='auto')
+plt.title('Espectrograma HRV (Wavelet)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Frecuencia (Hz)')
+plt.colorbar(label='Potencia')
+
+```
+
 Aplicando lo anterior se obtuvo:
 
 ![image](https://github.com/user-attachments/assets/3e2de52f-9069-4fcb-b0e3-c098b3676c5e)
