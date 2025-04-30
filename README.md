@@ -189,8 +189,22 @@ t = np.arange(len(ecg_signal)) / fs ##  Crea el vector de tiempo (t) correspondi
 
 ```
 
-#### filtro IIR de acuerdo con los parámetros de la señal
+#### filtro IIR de acuerdo con los parámetros de la señal y Ecuación en diferencias del filtro
+
 ```bash
+
+def bandpass(lowcut, highcut, fs, order=4): ## Define la función bandpass con los siguientes parámetros:lowcut: frecuencia de corte inferior (Hz),highcut: frecuencia de corte superior (Hz),fs: frecuencia de muestreo (Hz),order: orden del filtro (por defecto 4).
+    nyq = 0.5 * fs ## frecuencia de nyquist (normalizar frecuencias)
+    low = lowcut / nyq ## Normaliza la frecuencia de corte lowcut respecto a Nyquist, ya que la función butter espera frecuencias entre 0 y 1.
+    high = highcut / nyq ## Normaliza la frecuencia de corte highcut respecto a Nyquist, ya que la función butter espera frecuencias entre 0 y 1.
+    b, a = butter(order, [low, high], btype='band')  ## Diseña un filtro Butterworth pasa banda de orden dado, b: coeficientes del numerador (parte directa de la ecuación), a: coeficientes del denominador (parte recursiva).
+    
+    # Mostrar los coeficientes b y a (Ecuación en diferencias) 
+    print(f"Ecuación en diferencias del filtro IIR (coeficientes b, a):\n")
+    print("Coeficientes b (numerador):", b)
+    print("Coeficientes a (denominador):", a)
+
+
 b, a = bandpass(0.1, 50, fs, order=4) ## define un filtro pasa bandas con frecuencias pasantes desde 0.5 a 50 Hz, de orden 4 en donde b son los coeficientes del denominador y a del denominador 
 
 # Aplicar filtro IIR usando lfilter (automáticamente con condiciones iniciales en 0)
@@ -205,9 +219,19 @@ plt.ylabel('Amplitud (mV)')
 plt.grid()
 plt.show()
 ```
+La ecuación en diferencias describe cómo calcular la salida del filtro en función de las entradas actuales y pasadas, así como de las salidas anteriores. Es esencial para implementar el filtro en sistemas digitales, ya que reemplaza las operaciones en el dominio de la frecuencia por una forma iterativa en el tiempo.De lo anterior se obtuvo la siguiente ecuación:
+
+![image](https://github.com/user-attachments/assets/03483db1-9813-4efc-9524-ea2d2eae365a)
+
+La ecuación en diferencias obtenida a partir de los coeficientes `b` (numerador) y `a` (denominador) define cómo se calcula cada muestra de salida combinando entradas y salidas anteriores. La estructura del filtro muestra simetría (coeficientes impares el valor es 0) en los coeficientes, típica de un diseño pasa banda, y se encuentra normalizada (`a[0] = 1`). Esta forma permite implementar el filtro de manera eficiente.
+
 El filtro pasa banda de 0.1 Hz a 50 Hz con orden 4 es adecuado para procesar señales ECG porque elimina eficazmente la deriva de línea base (<0.5 Hz) y el ruido de alta frecuencia (>50 Hz), incluyendo interferencia de red y artefactos musculares, mientras conserva las componentes fisiológicas clave como las ondas P, QRS y T. El diseño IIR de orden moderado (4) ofrece una buena atenuación con baja exigencia computacional.Luego de aplicar el filtro a la señal se obtuvo lo siguiente
 
 ![image](https://github.com/user-attachments/assets/eda80515-0d4a-4c16-95e5-d0218343f7b3)
+
+
+
+
 
 
 ## Explicación Código: 
