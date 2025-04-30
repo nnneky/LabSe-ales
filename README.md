@@ -278,7 +278,11 @@ plt.show()  # Muestra la figura de la gráfica generada en pantalla
 
 ```
 
- #### Aplicación de transformada Wavelet
+![image](https://github.com/user-attachments/assets/68028753-8d53-4496-ad61-80534ef866d6)
+
+La gráfica representa los intervalos RR extraídos de la señal, mostrando la variación temporal del tiempo entre latidos consecutivos. La línea roja discontinua indica la media general, cercana a 807 ms, lo que corresponde a una frecuencia cardíaca promedio normal. La mayoría de los intervalos se agrupan alrededor de este valor, lo que sugiere una buena variabilidad de la frecuencia cardíaca (HRV), indicador de un sistema nervioso autónomo funcional y equilibrado. Sin embargo, se observan varios picos anómalos, especialmente hacia el final de la señal, que superan los 1600 ms y podrían deberse a errores en la detección de picos R o artefactos en la señal. Estas irregularidades deben ser consideradasya que pueden afectar la calidad de la información tratada.
+
+ ## Aplicación de transformada Wavelet
 
 ```bash
 wavelet = 'morl'   # Se usa in tipo de wavelet especifica para señales biologicas.
@@ -299,6 +303,8 @@ plt.ylabel('Frecuencia (Hz)')
 plt.colorbar(label='Potencia') # añade uina barra que indica cuantra ´potencia hay rn cada espacio del espectrograma
 
 ```
+
+
 #### Analísis transformada Wavelet
 
 Se usó la transformada wavelet Morlet por que al ser una función oscilatoria que se utiliza mucho en señales biologicas debido a su facilidad para tener buena localización en tiempo y frecuencia, por lo que se uso una transformada wavelet continua ya que esta captura variaciones muy siaves ademas de que teiene una gran adaptación a las bandas fisiologicas especificas de HRV donde a partir del espectrograma se pueden estudiar las variaciones simpaticas y parasimpaaticas. 
@@ -312,9 +318,6 @@ En cuanto a la banda HF [0.15 a 0.4 HZ] o actividad parasimpatica de 0 a 100 ms 
 El análisis de tiempo continuo muestra una media del intervalo RR de 806.71 ms, lo que equivale a una frecuencia cardíaca promedio de aproximadamente 74 latidos por minuto (usando la formula 60000/RR promedio), dentro del rango normal en reposo. La desviación estándar de los intervalos RR es de 122.16 ms, lo cual indica una variabilidad de la frecuencia cardíaca (HRV) alta, generalmente asociada con un buen estado de salud cardiovascular y un equilibrio adecuado del sistema nervioso autónomo, especialmente con predominio parasimpático. Esta alta variabilidad suele observarse en personas con buena condición física y bajo nivel de estrés. Esto indicaría que en la mayor parte del experimento el sujeto se mantuvo tranquileo y que en espacios muy cortos de tipo o finalizando dicho proceso experimento estimulo simpático brevemente.
 
 
-![image](https://github.com/user-attachments/assets/68028753-8d53-4496-ad61-80534ef866d6)
-
-La gráfica representa los intervalos RR extraídos de la señal, mostrando la variación temporal del tiempo entre latidos consecutivos. La línea roja discontinua indica la media general, cercana a 807 ms, lo que corresponde a una frecuencia cardíaca promedio normal. La mayoría de los intervalos se agrupan alrededor de este valor, lo que sugiere una buena variabilidad de la frecuencia cardíaca (HRV), indicador de un sistema nervioso autónomo funcional y equilibrado. Sin embargo, se observan varios picos anómalos, especialmente hacia el final de la señal, que superan los 1600 ms y podrían deberse a errores en la detección de picos R o artefactos en la señal. Estas irregularidades deben ser consideradasya que pueden afectar la calidad de la información tratada.
 
 ## REFERENCIAS
 
