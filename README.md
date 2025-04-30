@@ -251,6 +251,27 @@ De lo anterior se obtuvo la siguiente gráfica,donde Se puede observara que los 
 
 ![image](https://github.com/user-attachments/assets/c179e8a7-a821-4708-9f88-b9992433f2ca)
 
+## Análisis de la HRV en el dominio del tiempo
+```bash
+mean_rr = np.mean(rr_intervals)  # np.mean() calcula la media (promedio) de los intervalos R-R, promedio de los tiempos entre picos R consecutivos
+std_rr = np.std(rr_intervals)  # np.std() calcula la desviación estándar de los intervalos R-R, que mide la dispersión o variabilidad entre los intervalos
+
+print(f"Media RR: {mean_rr:.2f} ms")  # Imprime la media de los intervalos R-R en milisegundos, con un formato de dos decimales
+print(f"Desviación estándar RR: {std_rr:.2f} ms")  # Imprime la desviación estándar de los intervalos R-R en milisegundos, con un formato de dos decimales
+
+plt.figure(figsize=(12, 4))  # Define el tamaño de la figura de la gráfica: 12 unidades de ancho y 4 de alto
+plt.plot(rr_intervals, marker='o')  # Dibuja los intervalos R-R a lo largo del eje X, representados por círculos en la gráfica
+plt.axhline(mean_rr, color='red', linestyle='--', label='Media RR')  # Dibuja una línea horizontal en la posición de la media de los intervalos R-R. La línea es roja y discontinua.
+
+plt.title('Intervalos RR')  # Define el título de la gráfica como 'Intervalos RR'
+plt.xlabel('Latido')  # Etiqueta el eje X indicando que representa los latidos de corazón, o los eventos R-R
+plt.ylabel('Intervalo RR (ms)')  # Etiqueta el eje Y indicando que representa los intervalos R-R en milisegundos
+plt.legend()  # Añade una leyenda a la gráfica para explicar los elementos visuales (en este caso, la línea de la media RR)
+plt.grid()  # Añade una cuadrícula a la gráfica para facilitar la lectura de los valores
+plt.show()  # Muestra la figura de la gráfica generada en pantalla
+
+```
+
 
 
 
