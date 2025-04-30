@@ -52,6 +52,9 @@ son herramientas eficientes para analizar señales biológicas, como el ECG. La 
 - #### Symlet (Sym2, Sym4)
 on variantes de las wavelets de Daubechies diseñadas para ofrecer mayor simetría en su forma, lo que mejora la reconstrucción de señales. La Sym2 tiene 2 coeficientes y es útil para análisis de alta resolución temporal, mientras que la Sym4 con 4 coeficientes ofrece un mejor balance entre resolución temporal y frecuencia. Son ideales para filtrar artefactos y mejorar el análisis de señales biológicas como el ECG y EEG, manteniendo detalles importantes mientras eliminan ruido.
 
+- #### Morlet
+La transformada wavelet Morlet es ideal para el análisis de señales ECG y la medición de la HRV porque permite una resolución tanto en el tiempo como en la frecuencia, adaptándose a las características dinámicas de las señales. Esto facilita la detección precisa de eventos cardíacos y la identificación de las fluctuaciones de la frecuencia cardíaca en diferentes bandas, esenciales para evaluar la variabilidad cardíaca y el equilibrio del sistema nervioso autónomo.
+
 ## DISEÑO DEL EXPERIMENTO A IMPLEMENTAR
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
 
