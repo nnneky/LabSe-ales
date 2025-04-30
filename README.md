@@ -58,6 +58,9 @@ La transformada wavelet Morlet es ideal para el análisis de señales ECG y la m
 
 ## Diagrama de flujo:
 
+![image](https://github.com/user-attachments/assets/115eaf7f-121e-48ed-b0dc-a8bd4a5a56d1)
+
+
 ## DISEÑO DEL EXPERIMENTO A IMPLEMENTAR
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
 
