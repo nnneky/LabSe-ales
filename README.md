@@ -303,7 +303,9 @@ plt.colorbar(label='Potencia') # añade uina barra que indica cuantra ´potencia
 
 Se usó la transformada wavelet Morlet por que al ser una función oscilatoria que se utiliza mucho en señales biologicas debido a su facilidad para tener buena localización en tiempo y frecuencia, por lo que se uso una transformada wavelet continua ya que esta captura variaciones muy siaves ademas de que teiene una gran adaptación a las bandas fisiologicas especificas de HRV donde a partir del espectrograma se pueden estudiar las variaciones simpaticas y parasimpaaticas. 
 
-Donde al inicio en los primeros 100 ms se ve presencia de potencia en la banda LF lo cual indica un estado basal estable de modo que tiene un tono 
+Donde al inicio en los primeros 100 ms se ve presencia de potencia en la banda LF [0.04 – 0.15 Hz) lo cual indica un estado basal estable de modo que tiene un tono simpatico  y a la vez párasimpatico, luego de 100 a 200 ms la potencia LF se va  a mantener estable aunque decrece ligeramente donde indica un equilibrio sin grandes camvbios en las tecnicas utilizadas y despues de eso hay una disminucion relativa de LF lo que indica con un aumento de la actividad para simpatica lo cual generaría un cambio concreto. 
+
+En cuanto a la banda HF [0.15 a 0.4 HZ] o actividad parasimpatica de 0 a 100 ms hay una actividad discreta o baja donde despues aproximadamente en 150ms comienza un aumento en la potencia donde desde 220 a 300 hay un aumento marcado y sostenido de la potencia en HF se ve como una banda más brillante en el espectrograma donde de manera más profunda ese aumento tardío de HF se puede debur a un ¿a relajación o ejercicios de respiracion, basicamente recuperaci+on tras estrés, los cambios son especificios y localizados en el tiempo lo cual demuestra el por que hay que usar una transformada wavelet continua para detectar dinamicas autonomas
 
 ![image](https://github.com/user-attachments/assets/3e2de52f-9069-4fcb-b0e3-c098b3676c5e)
 
