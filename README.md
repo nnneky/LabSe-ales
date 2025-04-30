@@ -60,6 +60,10 @@ La transformada wavelet Morlet es ideal para el análisis de señales ECG y la m
 
 ![image](https://github.com/user-attachments/assets/115eaf7f-121e-48ed-b0dc-a8bd4a5a56d1)
 
+#### Diagrama de implementación del experimento: 
+
+![image](https://github.com/user-attachments/assets/f49762ca-e572-4efa-8445-2b92fe9267b2)
+
 
 ## DISEÑO DEL EXPERIMENTO A IMPLEMENTAR
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
@@ -317,6 +321,10 @@ Donde al inicio en los primeros 100 ms se ve presencia de potencia en la banda L
 
 En cuanto a la banda HF [0.15 a 0.4 HZ] o actividad parasimpatica de 0 a 100 ms hay una actividad discreta o baja donde despues aproximadamente en 150ms comienza un aumento en la potencia donde desde 220 a 300 hay un aumento marcado y sostenido de la potencia en HF se ve como una banda más brillante en el espectrograma donde de manera más profunda ese aumento tardío de HF se puede debur a un ¿a relajación o ejercicios de respiracion, basicamente recuperaci+on tras estrés, los cambios son especificios y localizados en el tiempo lo cual demuestra el por que hay que usar una transformada wavelet continua para detectar dinamicas autonomas
 
+ #### Esprectrograma de la señal: 
+
+ ![image](https://github.com/user-attachments/assets/c03d6e80-db54-4dd1-bcd3-9496a8197c7f)
+ 
 ## REFERENCIAS
 
 - Todas las imagenes presentes en este repositorio son de autoria propia de los integrantes, exceptuando la primera imagen, la cual fue recopilada de https://www.urgenciasyemergen.com/derivaciones-del-electrocardiograma-iii_4/
