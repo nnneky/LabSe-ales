@@ -281,26 +281,26 @@ plt.show()  # Muestra la figura de la gráfica generada en pantalla
  #### Aplicación de transformada Wavelet
 
 ```bash
-wavelet = 'morl'
-scales = np.arange(1, 128)
-coefficients, frequencies = pywt.cwt(rr_interpolated, scales, wavelet, 1/interp_fs)
+wavelet = 'morl'   # Se usa in tipo de wavelet especifica para señales biologicas.
+scales = np.arange(1, 128) # Se manejan las escialas de la transformada wavelet
+coefficients, frequencies = pywt.cwt(rr_interpolated, scales, wavelet, 1/interp_fs) # pywt.cwt(...) aplica la transdormada wavelet continua en la señal de RR uniformemente muestreada. 
 
 # Limitar a frecuencias fisiológicas relevantes (0-0.5 Hz)
-freq_limit = 0.5
-mask = frequencies <= freq_limit
-coefficients = coefficients[mask]
+freq_limit = 0.5  # se realiza un filtrado de frecuencias fisiologicas
+mask = frequencies <= freq_limit # filtro booleano para seleccionar solo las frecuencias menores o iguales a 0.5 Hz.
+coefficients = coefficients[mask] 
 frequencies = frequencies[mask]
 
 plt.figure(figsize=(12, 6))
-plt.imshow(np.abs(coefficients), extent=[0, len(rr_interpolated)/interp_fs, frequencies[-1], frequencies[0]],
-           cmap='jet', aspect='auto')
+plt.imshow(np.abs(coefficients), extent=[0, len(rr_interpolated)/interp_fs, frequencies[-1], frequencies[0]],  cmap='jet', aspect='auto')  # Con np.abs se grafica la magnitud de la potencia de los coeficientes popoara mostrar la energia en sus frecuencias y cmap jet ayuda a usar el mapa de color de tipo espectro 
 plt.title('Espectrograma HRV (Wavelet)')
 plt.xlabel('Tiempo (s)')
 plt.ylabel('Frecuencia (Hz)')
-plt.colorbar(label='Potencia')
+plt.colorbar(label='Potencia') # añade uina barra que indica cuantra ´potencia hay rn cada espacio del espectrograma
 
 ```
 
+Las señales biologicas que se debían simular estan interpretadas de manera completa por la función "mor1"
 Aplicando lo anterior se obtuvo:
 
 ![image](https://github.com/user-attachments/assets/3e2de52f-9069-4fcb-b0e3-c098b3676c5e)
