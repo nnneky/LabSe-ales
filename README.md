@@ -60,11 +60,6 @@ La transformada wavelet Morlet es ideal para el análisis de señales ECG y la m
 
 ![image](https://github.com/user-attachments/assets/115eaf7f-121e-48ed-b0dc-a8bd4a5a56d1)
 
-#### Diagrama de implementación del experimento: 
-
-![image](https://github.com/user-attachments/assets/f49762ca-e572-4efa-8445-2b92fe9267b2)
-
-
 ## DISEÑO DEL EXPERIMENTO A IMPLEMENTAR
 Con la finalidad de realizar un análisis del HRV, se diseño un experimento de aproximadamente 5 minutos que estimulará la actividad simpática, en dondela frecuencia cárdiaca aumentará y el HRV disminuirá. Para esto se planteo el siguiente diagrama de flujo, el cual describe paso a paso como se ejecutará mencionado experimento
 
@@ -74,6 +69,8 @@ Para este apartado de la práctica se utilizo un módulo de ecg AD8232, se imple
 ![image](https://github.com/user-attachments/assets/ea68d9d7-7353-4c24-bf64-0aeb80847941)
 
 Despues de colocar de forma correcta los electrodos, la salida de datos del sensor se conecto a la stm32 nucleo 411, estos datos serán recividos mediante un ADC (con una frecuencia de muestreo de 400 Hz y resolución de 12 bits) y enviados a matlab mediante un protocolo usart, luego en la interfaz del programa se realizará el guardado y tratamiento de la señal en un archivo .txt, Como se muestra a continuación
+
+![image](https://github.com/user-attachments/assets/f49762ca-e572-4efa-8445-2b92fe9267b2)
 
 ```bash
 function registrar_ecg_5min_completo
@@ -290,7 +287,7 @@ El análisis de tiempo continuo muestra una media del intervalo RR de 806.71 ms,
 
 La gráfica representa los intervalos RR extraídos de la señal, mostrando la variación temporal del tiempo entre latidos consecutivos. La línea roja discontinua indica la media general, cercana a 807 ms, lo que corresponde a una frecuencia cardíaca promedio normal. La mayoría de los intervalos se agrupan alrededor de este valor, lo que sugiere una buena variabilidad de la frecuencia cardíaca (HRV), indicador de un sistema nervioso autónomo funcional y equilibrado. Sin embargo, se observan varios picos anómalos, especialmente hacia el final de la señal, que superan los 1600 ms y podrían deberse a errores en la detección de picos R o artefactos en la señal. Estas irregularidades deben ser consideradasya que pueden afectar la calidad de la información tratada.
 
- ## Aplicación de transformada Wavelet
+ ## APLICACIÓN DE LA TRANSFORMADA WAVELET
 
 ```bash
 wavelet = 'morl'   # Se usa in tipo de wavelet especifica para señales biologicas.
