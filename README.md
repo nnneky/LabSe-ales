@@ -223,7 +223,7 @@ La ecuación en diferencias describe cómo calcular la salida del filtro en func
 
 ![image](https://github.com/user-attachments/assets/03483db1-9813-4efc-9524-ea2d2eae365a)
 
-La ecuación en diferencias obtenida a partir de los coeficientes b (numerador) y a (denominador) define cómo se calcula cada muestra de salida combinando entradas y salidas anteriores. La estructura del filtro muestra simetría (coeficientes impares el valor es 0) en los coeficientes, típica de un diseño pasa banda, y se encuentra normalizada (`a[0] = 1`). Esta forma permite implementar el filtro de manera eficiente.
+La ecuación en diferencias obtenida a partir de los coeficientes b (numerador) y a (denominador) define cómo se calcula cada muestra de salida combinando entradas y salidas anteriores. La estructura del filtro muestra simetría (coeficientes impares el valor es 0) en los coeficientes, típica de un diseño pasa banda, y se encuentra normalizada (a[0]=1). Esta forma permite implementar el filtro de manera eficiente.
 
 El filtro pasa banda de 0.1 Hz a 50 Hz con orden 4 es adecuado para procesar señales ECG porque elimina eficazmente la deriva de línea base (<0.5 Hz) y el ruido de alta frecuencia (>50 Hz), incluyendo interferencia de red y artefactos musculares, mientras conserva las componentes fisiológicas clave como las ondas P, QRS y T. El diseño IIR de orden moderado (4) ofrece una buena atenuación con baja exigencia computacional.Luego de aplicar el filtro a la señal se obtuvo lo siguiente
 
