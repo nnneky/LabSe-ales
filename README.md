@@ -23,7 +23,7 @@ La variabilidad de la frecuencia cardíaca (HRV) se refiere a las fluctuaciones 
 
 En el análisis espectral de la HRV, las fluctuaciones se descomponen en diferentes bandas de frecuencia, cada una asociada a distintos mecanismos fisiológicos. Las frecuencias de interés más comunes en este análisis son:
 
-- VLF (Very Low Frequency): 0.003 – 0.04 Hz.
+- VLF (Very Low Frequency): 0.003 – 0.04 Hz. dificil de detectar, se debe capturar la señal por tiempos muy extendidos
 
 - LF (Low Frequency): 0.04 – 0.15 Hz (Se asocia con una combinación de actividad simpática y parasimpática)
 
@@ -281,6 +281,20 @@ El análisis de tiempo continuo muestra una media del intervalo RR de 806.71 ms,
 ![image](https://github.com/user-attachments/assets/68028753-8d53-4496-ad61-80534ef866d6)
 
 La gráfica representa los intervalos RR extraídos de la señal, mostrando la variación temporal del tiempo entre latidos consecutivos. La línea roja discontinua indica la media general, cercana a 807 ms, lo que corresponde a una frecuencia cardíaca promedio normal. La mayoría de los intervalos se agrupan alrededor de este valor, lo que sugiere una buena variabilidad de la frecuencia cardíaca (HRV), indicador de un sistema nervioso autónomo funcional y equilibrado. Sin embargo, se observan varios picos anómalos, especialmente hacia el final de la señal, que superan los 1600 ms y podrían deberse a errores en la detección de picos R o artefactos en la señal. Estas irregularidades deben ser consideradasya que pueden afectar la calidad de la información tratada.
+
+## referencias
+
+- Todas las imagenes presentes en este repositorio son de autoria propia de los integrantes, exceptuando la primera imagen, la cual fue recopilada de https://www.urgenciasyemergen.com/derivaciones-del-electrocardiograma-iii_4/
+- #### fundamentación teórica
+- https://www.msdmanuals.com/es/professional/trastornos-neurol%C3%B3gicos/sistema-nervioso-aut%C3%B3nomo/generalidades-sobre-el-sistema-nervioso-aut%C3%B3nomo#Anatom%C3%ADa_v1032284_es
+- https://support.garmin.com/es-MX/?faq=04pnPSBTYSAYL9FylZoUl5
+- https://www.sciencedirect.com/science/article/pii/S0120563319300683
+
+- #### transformada wavelet
+- https://virtual.cuautitlan.unam.mx/intar/?page_id=1108, anexos Elena pinto Moreno
+- https://iopscience.iop.org/article/10.1088/0967-3334/26/5/R01
+- https://ieeexplore.ieee.org/document/362922
+  
 
 
 
