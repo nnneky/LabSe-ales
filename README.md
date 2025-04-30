@@ -282,7 +282,7 @@ El análisis de tiempo continuo muestra una media del intervalo RR de 806.71 ms,
 
 La gráfica representa los intervalos RR extraídos de la señal, mostrando la variación temporal del tiempo entre latidos consecutivos. La línea roja discontinua indica la media general, cercana a 807 ms, lo que corresponde a una frecuencia cardíaca promedio normal. La mayoría de los intervalos se agrupan alrededor de este valor, lo que sugiere una buena variabilidad de la frecuencia cardíaca (HRV), indicador de un sistema nervioso autónomo funcional y equilibrado. Sin embargo, se observan varios picos anómalos, especialmente hacia el final de la señal, que superan los 1600 ms y podrían deberse a errores en la detección de picos R o artefactos en la señal. Estas irregularidades deben ser consideradasya que pueden afectar la calidad de la información tratada.
 
-## referencias
+## REFERENCIAS
 
 - Todas las imagenes presentes en este repositorio son de autoria propia de los integrantes, exceptuando la primera imagen, la cual fue recopilada de https://www.urgenciasyemergen.com/derivaciones-del-electrocardiograma-iii_4/
 - #### fundamentación teórica
