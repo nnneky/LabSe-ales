@@ -232,8 +232,7 @@ El filtro pasa banda de 0.1 Hz a 50 Hz con orden 4 es adecuado para procesar se�
 #### Detección de los Picos R
 
 ```bash
-peaks, _ = find_peaks(filtered_ecg, distance=0.6*fs, height=np.std(filtered_ecg))  ## La función find_peaks busca los picos (máximos locales) en la señal filtered_ecg,distance=0.6*fs parámetro distance especifica la distancia mínima entre los picos en número de muestras. Se establece como el 60% de la frecuencia de muestreo (fs), lo cual ayuda a evitar que se detecten picos demasiado cercanos, que podrían corresponder a artefactos,height=np.std(filtered_ecg): parámetro asegura que solo se detecten picos cuya amplitud sea superior a la desviación estándar de la señal. Esto ayuda a eliminar picos pequeños que no corresponden a eventos significativos.
-peaks, _: La función devuelve dos valores. El primero, peaks, es un array que contiene los índices de los picos detectados en la señal. El segundo valor, _, es el cual no estamos utilizando en este caso.
+peaks, _ = find_peaks(filtered_ecg, distance=0.6*fs, height=np.std(filtered_ecg))  ## La función find_peaks busca los picos (máximos locales) en la señal filtered_ecg, distance=0.6*fs parámetro distance especifica la distancia mínima entre los picos en número de muestras. Se establece como el 60% de la frecuencia de muestreo (fs), lo cual ayuda a evitar que se detecten picos demasiado cercanos, que podrían corresponder a artefactos,height=np.std(filtered_ecg): parámetro asegura que solo se detecten picos cuya amplitud sea superior a la desviación estándar de la señal. Esto ayuda a eliminar picos pequeños que no corresponden a eventos significativos.peaks, _: La función devuelve dos valores. El primero, peaks, es un array que contiene los índices de los picos detectados en la señal. El segundo valor, _, es el cual no estamos utilizando en este caso.
 
 rpeak_times = peaks / fs
 rr_intervals = np.diff(rpeak_times) * 1000  # ms
